@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Responsive menu
+    // menu sổ ra khi bấm vô 3///
     const menuToggle = document.getElementById('mobile-menu');
     const nav = document.querySelector('nav');
 
