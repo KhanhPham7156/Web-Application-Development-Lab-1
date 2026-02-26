@@ -6,6 +6,9 @@
     --off-white: #f5f5f5;
     --white-alpha-10: rgba(255, 255, 255, 0.1);
     --white-alpha-20: rgba(255, 255, 255, 0.2);
+    --gold-light: #f3d18c;
+    --text-muted: #dcdcdc;
+    --text-sand: #d2b48c;
 }
 
 body {
@@ -295,3 +298,90 @@ header nav ul li a:hover {
 }
 
 /* signature coffee */
+    .signature-coffee {
+        background-color: var(--dark-brown);
+        padding: 80px 0;
+    }
+
+    .signature-coffee-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .signature-coffee-header h2 {
+        color: var(--light-brown);
+        font-size: 36px;
+        letter-spacing: 4px;
+        margin-bottom: 10px;
+    }
+
+    .signature-coffee-header p {
+        color: var(--text-sand);
+        font-size: 18px;
+        font-style: italic;
+        filter: brightness(150%);
+    }
+
+    .signature-coffee-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 3fr;
+        gap: 20px;
+        padding: 50px 20%;
+        place-items: center;
+    }
+
+    .signature-coffee-content img {
+        height: 200px;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .signature-coffee-item-content {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .signature-coffee-item-content .description {
+        flex: 1;
+    }
+
+    .signature-coffee .item-name {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    .signature-coffee .item-name h3:first-child {
+        color: var(--white);
+        margin: 0; /* để ko bị lệch hàng */
+        font-size: 18px;
+    }
+
+    .signature-coffee .item-name h3:last-child {
+        color: var(--light-brown);
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .signature-coffee .description p {
+        color: var(--text-muted);
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .signature-coffee-content {
+            grid-template-columns: 1fr;
+            padding: 20px 5%;
+        }
+    }
