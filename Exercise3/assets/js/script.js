@@ -19,35 +19,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // chuyển banner bằng nút bấm và auto
-    const leftBtn = document.querySelector('.left-nav-button');
-    const rightBtn = document.querySelector('.right-nav-button');
-    const bannerImages = document.querySelectorAll('.banner-image > div'); // lấy các thẻ div là con của banner-image
-    let currentIndex = 0;
+    // Hàm chạy slider cho banner và review
+    function initSlider(containerSelector, itemSelector, autoPlay = false, interval = 5000) {
+        const container = document.querySelector(containerSelector); // lấy element cần slider vd banner hoặc review
+        if (!container) return;
 
-    function showBanner(index) {
-        bannerImages.forEach((img, i) => {
-            if (i === index) {
-                img.classList.add('active');
-            } else {
-                img.classList.remove('active');
-            }
-        });
+        const leftBtn = container.querySelector('.left-nav-button');
+        const rightBtn = container.querySelector('.right-nav-button');
+        const items = container.querySelectorAll(itemSelector);
+        let currentIndex = 0;
+
+        function showItem(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index); // duyệt mọi slide nếu = index mới active
+            });
+        }
+
+        if (leftBtn) {
+            leftBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showItem(currentIndex);
+            });
+        }
+
+        if (rightBtn) {
+            rightBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showItem(currentIndex);
+            });
+        }
+
+        if (autoPlay) {
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length; // cho index nó chạy vòng tròn
+                showItem(currentIndex);
+            }, interval);
+        }
     }
 
-    leftBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + bannerImages.length) % bannerImages.length; 
-        showBanner(currentIndex);
-    });
-
-    rightBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % bannerImages.length;
-        showBanner(currentIndex);
-    });
-
-    // Tự động chuyển banner sau 5 giây
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % bannerImages.length; 
-        showBanner(currentIndex);
-    }, 5000);
+    // chạy banner
+    initSlider('.banner', '.banner-image > div', true);
+    // chạy review
+    initSlider('.review', '.review-item', true);
 });

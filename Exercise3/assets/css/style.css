@@ -9,6 +9,8 @@
     --gold-light: #f3d18c;
     --text-muted: #dcdcdc;
     --text-sand: #d2b48c;
+    --black: #000;
+    --white-alpha-20: #F4ECE1;
 }
 
 body {
@@ -159,7 +161,7 @@ header nav ul li a:hover {
     object-fit: cover;
 }
 
-.banner .nav-button {
+.nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%); /* căn giữa theo chiều dọc vì top chỉ đẩy ptu xuống dưới 50% mà chưa tính đến chiều cao của chính nó */
@@ -173,8 +175,8 @@ header nav ul li a:hover {
     z-index: 10;
 }
 
-.banner .left-nav-button,
-.banner .right-nav-button {
+.left-nav-button,
+.right-nav-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,7 +187,7 @@ header nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.banner .nav-button div:hover {
+.nav-button div:hover {
     color: var(--light-brown);
     border: 2px solid var(--light-brown);
 }
@@ -200,8 +202,8 @@ header nav ul li a:hover {
         width: 100%;
     }
 
-    .banner .left-nav-button,
-    .banner .right-nav-button {
+    .left-nav-button,
+    .right-nav-button {
         width: 30px;
         height: 30px;
     }
@@ -298,90 +300,245 @@ header nav ul li a:hover {
 }
 
 /* signature coffee */
-    .signature-coffee {
-        background-color: var(--dark-brown);
-        padding: 80px 0;
-    }
+.signature-coffee {
+    background-color: var(--dark-brown);
+    padding: 20px 0;
+}
 
-    .signature-coffee-header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 40px;
-    }
+.signature-coffee-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-    .signature-coffee-header h2 {
-        color: var(--light-brown);
-        font-size: 36px;
-        letter-spacing: 4px;
-        margin-bottom: 10px;
-    }
+.signature-coffee-header h2 {
+    color: var(--light-brown);
+    font-size: 36px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
 
-    .signature-coffee-header p {
-        color: var(--text-sand);
-        font-size: 18px;
-        font-style: italic;
-        filter: brightness(150%);
-    }
+.signature-coffee-header p {
+    color: var(--text-sand);
+    font-size: 18px;
+    font-style: italic;
+    filter: brightness(150%);
+}
 
+.signature-coffee-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 3fr;
+    gap: 20px;
+    padding: 50px 20%;
+    place-items: center;
+}
+
+.signature-coffee-content img {
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+}
+
+.signature-coffee-item-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.signature-coffee-item-content:hover {
+    transform: scale(1.1);
+}
+
+.signature-coffee-item-content .description {
+    flex: 1;
+}
+
+.signature-coffee .item-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.signature-coffee .item-name h3:first-child {
+    color: var(--white);
+    margin: 0; /* để ko bị lệch hàng */
+    font-size: 18px;
+}
+
+.signature-coffee .item-name h3:last-child {
+    color: var(--light-brown);
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.signature-coffee .description p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
     .signature-coffee-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3fr 3fr;
-        gap: 20px;
-        padding: 50px 20%;
-        place-items: center;
+        grid-template-columns: 1fr;
+        padding: 20px 5% 20px 2%;
     }
+}
 
-    .signature-coffee-content img {
-        height: 200px;
-        width: auto;
-        object-fit: cover;
-    }
+/* product */
+.product {
+    background-color: #F4ECE1;
+    padding: 80px 0;
+}
 
-    .signature-coffee-item-content {
+.product-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product-header h2 {
+    color: var(--light-brown);
+    font-size: 36px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    filter: brightness(60%);
+}
+
+.product-header p {
+    color: var(--black);
+    font-size: 18px;
+    font-style: italic;
+}
+
+.product-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    place-items: center;
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.product-content img {
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+}
+
+.product-item h3:last-child {
+    color: var(--light-brown);
+    filter: brightness(60%);
+}
+
+.product-item {
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .product-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 20px;
-        align-items: center;
-        padding: 15px;
     }
+}
 
-    .signature-coffee-item-content .description {
-        flex: 1;
-    }
+/* review */
+.review {
+    background-image: url('../images/reviewBackground.png');
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    position: relative; 
+    overflow: hidden;
+}
 
-    .signature-coffee .item-name {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
-    }
+.review-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+}
 
-    .signature-coffee .item-name h3:first-child {
-        color: var(--white);
-        margin: 0; /* để ko bị lệch hàng */
-        font-size: 18px;
-    }
+.review-header h2 {
+    color: var(--light-brown);
+    font-size: 36px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
 
-    .signature-coffee .item-name h3:last-child {
-        color: var(--light-brown);
-        margin: 0;
-        font-size: 18px;
-        font-weight: bold;
-    }
+.review-header p {
+    color: var(--white);
+    font-size: 18px;
+    font-style: italic;
+}
 
-    .signature-coffee .description p {
-        color: var(--text-muted);
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.5;
-    }
+.review-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    position: relative;
+    padding: 0 15%;
+}
 
-    @media (max-width: 768px) {
-        .signature-coffee-content {
-            grid-template-columns: 1fr;
-            padding: 20px 5%;
-        }
-    }
+.review-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.review-item.active {
+    display: flex;
+}
+
+.review-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--light-brown);
+    margin-bottom: 20px;
+}
+
+.rating-star {
+    color: var(--light-brown);
+    margin-bottom: 15px;
+}
+
+.review-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.review-item p {
+    font-size: 18px;
+    font-style: italic;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
