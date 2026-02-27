@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
+    <link rel="icon" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,6 +30,7 @@
     </header>
     <main>
         <div class="banner">
+            <h1 style="display: none;">ĐỘBUCKS - Hương vị cà phê nguyên chất</h1>
             <div class="banner-image">
                 <div class="banner-image-1 active">
                     <img src="assets/images/banner1.png" alt="Hương vị từ những miền đất cà phê">
@@ -47,7 +49,7 @@
             </div>
         </div>
 
-        <div class="feature-sections">
+        <section class="feature-sections">
             <div class="feature-item1">
                 <img src="assets/images/feature1.png" alt="Signature coffee">
                 <div class="item-content">
@@ -72,26 +74,26 @@
                     <a href="pages/post3.html">Xem thêm</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="signature-coffee">
+        <section class="signature-coffee">
             <div class="signature-coffee-header">
                 <h2>SIGNATURE COFFEE</h2>
                 <p>Khám phá các thức uống signature của chúng tôi</p>
             </div>
             <div class="signature-coffee-content">
-                <div class="signature-coffee-item">
+                <figure class="signature-coffee-item">
                     <div class="signature-coffee-item-content">
                         <img src="assets/images/signatureItem1.png" alt="Cà Phê Muối">
-                        <div class="description">
+                        <figcaption class="description">
                             <div class="item-name">
                                 <h3>Cà Phê Muối</h3>
                                 <h3>45.000đ</h3>
                             </div>
                             <p>Béo ngậy lớp kem mặn, đậm đà vị cà phê</p>
-                        </div>
+                        </figcaption>
                     </div>
-                </div>
+                </figure>
                 <div class="signature-coffee-item">
                     <div class="signature-coffee-item-content">
                         <img src="assets/images/signatureItem2.png" alt="Bạc Xỉu Cốt Dừa">
@@ -153,9 +155,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="product">
+        <section class="product">
             <div class="product-header">
                 <h2>Cà phê hạt & Bột cà phê nguyên chất</h2>
                 <p>Được tuyển chọn từ những vùng trồng cà phê tốt nhất</p>
@@ -206,9 +208,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="review">
+        <section class="review">
             <div class="review-header">
                 <h2>KHÁCH HÀNG NÓI GÌ</h2>
                 <p>+2000 KHÁCH HÀNG HÀI LÒNG</p>
@@ -259,9 +261,9 @@
                     <p>"Không gian đẹp, cà phê trứng rất béo và ngon. Chắc chắn sẽ quay lại!"</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="why-choose">
+        <section class="why-choose">
             <div class="why-choose-header">
                 <h2>VÌ SAO CHỌN CHÚNG TÔI</h2>
                 <p>Không chỉ dừng lại ở những công thức pha chế bí truyền đầy mê hoặc, ĐỘBUCKS còn mang đến một không gian tận hưởng khác biệt, nơi mỗi giọt cà phê đều kể một câu chuyện của riêng bạn.</p>
@@ -296,7 +298,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer-content">
@@ -331,5 +333,8 @@
             <p>&copy; 2026 ĐỘBUCKS. All rights reserved.</p>
         </div>
     </footer>
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 </body>
 </html>
