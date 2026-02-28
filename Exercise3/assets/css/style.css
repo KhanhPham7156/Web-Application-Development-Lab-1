@@ -230,7 +230,7 @@ header nav ul li a:hover {
     grid-template-areas: 
         "item1 item2"
         "item1 item3";
-    gap: 20px;
+    gap: 30px;
     padding: 50px 15%;
     /* Bỏ height cố định để các item tự dãn theo tỉ lệ */
 }
@@ -283,16 +283,29 @@ header nav ul li a:hover {
     top: 30%;
     left: 10%;
     color: var(--white);
-    font-size: 20px;
-    font-weight: bold;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-sections .item-content h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.feature-sections .item-content p {
+    font-size: 18px;
+    margin: 0;
 }
 
 .feature-sections a {
+    display: inline-block;
     color: var(--white);
     text-decoration: none;
     border: 1px solid var(--white);
     padding: 10px 20px;
+    width: fit-content;
     transition: all 0.3s ease;
 }
 
@@ -317,8 +330,17 @@ header nav ul li a:hover {
     }
 
     .feature-sections .item-content {
-        top: 10%;
+        top: 15%;
         left: 10%;
+        gap: 10px;
+    }
+
+    .feature-sections .item-content h3 {
+        font-size: 20px;
+    }
+
+    .feature-sections .item-content p {
+        font-size: 14px;
     }
 }
 
@@ -504,7 +526,7 @@ header nav ul li a:hover {
 
 /* review */
 .review {
-    background-image: url('../images/reviewBackground.png');
+    background-image: url('../images/reviewBackground.webp');
     background-size: cover;
     background-position: center;
     height: 65vh;
