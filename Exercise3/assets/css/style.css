@@ -22,12 +22,17 @@
     --bg-espresso: #2b2321;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--white);
     font-size: 16px;
+    overflow-x: hidden; 
 }
 
 /* Header */
@@ -126,7 +131,6 @@ header nav ul li a:hover {
         display: block;
         padding: 15px 20px;
         width: 100%;
-        box-sizing: border-box;
     }
 
     header nav ul li a:hover {
@@ -406,9 +410,26 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    .signature-coffee-header {
+        padding: 0 20px;
+    }
+
     .signature-coffee-content {
         grid-template-columns: 1fr;
-        padding: 20px 5% 20px 2%;
+        padding: 10px 15px; 
+    }
+
+    .signature-coffee-item-content {
+        padding: 10px;
+        gap: 15px;  
+    }
+
+    .signature-coffee-content img {
+        height: 140px;
+    }
+
+    .signature-coffee .item-name h3 {
+        font-size: 16px;
     }
 }
 
@@ -470,6 +491,10 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    .product-header {
+        padding: 0 20px;
+    }
+
     .product-content {
         display: flex;
         flex-direction: column;
@@ -693,18 +718,7 @@ header nav ul li a:hover {
     display: flex;
     gap: 15px;
     margin-top: 20px;
-}
-
-.social-links a {
-    color: var(--white);
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .footer-column iframe {
@@ -894,6 +908,7 @@ header nav ul li a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .mission-item p {
@@ -1139,7 +1154,9 @@ header nav ul li a:hover {
 }
 
 .post-container img {
-    height: 450px;
+    height: auto;
+    width: 100%;
+    max-height: 500px;
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 15px;
@@ -1199,6 +1216,13 @@ header nav ul li a:hover {
     .post-featured-image {
         height: 250px;
     }
+
+    .post-container img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        max-height: 250px;
+    }
 }
 
 /* booking */
@@ -1254,7 +1278,8 @@ header nav ul li a:hover {
 input, 
 select, 
 textarea {
-    padding: 5px;
+    width: 100%;
+    padding: 12px;
     border-radius: 10px;
     border: 1px solid var(--border-light);
     font-size: 16px;
@@ -1377,5 +1402,57 @@ label#group-label {
 
     .form-buttons {
         flex-direction: column;
+    }
+}
+
+/* contact.html */
+.contact {
+    max-width: 1100px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h2, .contact-feedback h2 {
+    color: var(--dark-brown);
+    margin-bottom: 30px;
+    font-size: 28px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact-feedback .booking-form {
+    width: 100%;
+    margin: 0;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item h3 {
+    color: var(--light-brown);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.info-item h3 i {
+    margin-right: 10px;
+}
+
+.info-item p {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 30px 0;
+        padding: 0 40px;
     }
 }

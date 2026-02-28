@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 alert('Vui lòng kiểm tra lại các thông tin bị sai.');
             } else {
-                alert('Cảm ơn bạn! Yêu cầu đặt bàn đã được gửi thành công.');
+                alert('Cảm ơn bạn! Chúng tôi đã nhận được thông tin của bạn');
                 bookingForm.reset();
                 // ẩn tất cả lỗi sau khi reset
                 bookingForm.querySelectorAll('.error').forEach(el => el.classList.remove('active')); // lấy tất cả các error đang bị active và ẩn đi
