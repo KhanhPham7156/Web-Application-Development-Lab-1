@@ -232,7 +232,6 @@ header nav ul li a:hover {
         "item1 item3";
     gap: 30px;
     padding: 50px 15%;
-    /* Bỏ height cố định để các item tự dãn theo tỉ lệ */
 }
 
 .feature-item1 {
