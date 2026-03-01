@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function showItem(index) {
             items.forEach((item, i) => {
-                item.classList.toggle('active', i === index); // duyệt mọi slide nếu = index mới active
+                item.classList.toggle('active', i == index); // duyệt mọi slide nếu = index mới active, false = bỏ active
             });
         }
 
