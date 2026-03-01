@@ -70,22 +70,22 @@
                 <fieldset class="Details">
                     <legend><i class="fa-solid fa-calendar-days"></i> Chi tiết đặt bàn</legend>
                     <div class="form-group">
-                        <label for="guests">Số lượng người <span class="required">*</span></label>
+                        <label for="guests" id="group-label">Số lượng người <span class="required">*</span></label>
                         <input type="number" id="guests" name="guests" min="1" max="20" step="1" value="2" required>
                         <span class="error">Số lượng từ 1 đến 20 người.</span>
                     </div>
                     <div class="form-group">
-                        <label for="date">Ngày đặt bàn <span class="required">*</span></label>
+                        <label for="date" id="group-label">Ngày đặt bàn <span class="required">*</span></label>
                         <input type="date" id="date" name="date" required min="2026-02-28">
                         <span class="error">Vui lòng chọn ngày hợp lệ.</span>
                     </div>
                     <div class="form-group">
-                        <label for="time">Thời gian đặt bàn <span class="required">*</span></label>
+                        <label for="time" id="group-label">Thời gian đặt bàn <span class="required">*</span></label>
                         <input type="time" id="time" name="time" required>
                         <span class="error">Vui lòng chọn thời gian hợp lệ.</span>
                     </div>
                     <div class="form-group">
-                        <label for="branch">Chọn chi nhánh <span class="required">*</span></label>
+                        <label for="branch" id="group-label">Chọn chi nhánh <span class="required">*</span></label>
                         <select id="branch" name="branch" required>
                             <option value="">-- Vui lòng chọn --</option>
                             <optgroup label="Quận Tân Bình">
@@ -99,7 +99,7 @@
                         <span class="error">Vui lòng chọn một chi nhánh.</span>
                     </div>
                     <div class="form-group">
-                        <label for="drink-hint">Đồ uống yêu thích:</label>
+                        <label for="drink-hint" id="group-label">Đồ uống yêu thích:</label>
                         <input list="drinks" id="drink-hint" name="favorite_drink" placeholder="Nhập hoặc chọn gợi ý...">
                         <datalist id="drinks">
                             <option value="Cà phê Đen">
@@ -116,25 +116,34 @@
                     <div class="form-group" id="item1">
                         <label id="group-label">Vị trí ngồi</label>
                         <div class="radio-group">
-                            <input type="radio" id="inside" name="position" value="inside" checked>
-                            <label for="inside" class="label-inline">Trong nhà</label>
-                            <input type="radio" id="outside" name="position" value="outside">
-                            <label for="outside" class="label-inline">Ngoài trời</label>
+                            <div class="radio-item">
+                                <input type="radio" id="inside" name="position" value="inside" checked>
+                                <label for="inside" class="label-inline">Trong nhà</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="outside" name="position" value="outside">
+                                <label for="outside" class="label-inline">Ngoài trời</label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Dịch vụ mong muốn</label>
+                        <label id="group-label">Dịch vụ mong muốn</label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="wifi" name="services" value="wifi">
-                            <label for="wifi" class="label-inline">Wifi mạnh</label>
-                            <input type="checkbox" id="smoking" name="services" value="smoking">
-                            <label for="smoking" class="label-inline">Khu vực hút thuốc</label>
-                            <input type="checkbox" id="decoration" name="services" value="decoration">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="wifi" name="services" value="wifi">
+                                <label for="wifi" class="label-inline">Wifi mạnh</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="smoking" name="services" value="smoking">
+                                <label for="smoking" class="label-inline">Khu vực hút thuốc</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="decoration" name="services" value="decoration">
                             <label for="decoration" class="label-inline">Trang trí bàn</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="budget">Ngân sách trang trí dự kiến</label>
+                        <label for="budget" id="group-label">Ngân sách trang trí dự kiến</label>
                         <div class="budget-range">
                             <span>50.000đ</span>
                             <input type="range" id="budget" name="budget" min="50" max="1000" step="10" value="200">
@@ -142,11 +151,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="theme">Màu sắc trang trí (Nếu có)</label>
+                        <label for="theme" id="group-label">Màu sắc trang trí (Nếu có)</label>
                         <input type="color" id="theme" name="theme" value="#7a5c3d">
                     </div>
                     <div class="form-group">
-                        <label for="note">Ghi chú</label>
+                        <label for="note" id="group-label">Ghi chú</label>
                         <textarea id="note" name="note" rows="4" placeholder="Ví dụ: Tôi muốn ngồi gần cửa sổ..."></textarea>
                     </div>
                 </fieldset>

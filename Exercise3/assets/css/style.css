@@ -1371,7 +1371,27 @@ label#group-label {
 .booking-form fieldset.Options #item1 .radio-group {
     display: flex;
     flex-direction: row;
+    gap: 20px;
+}
+
+.checkbox-item input,
+.radio-item input {
+    display: inline-block;
+    width: auto;
+}
+
+.radio-item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.checkbox-item {
+    display: flex;
+    flex-direction: row;
     gap: 10px;
+    cursor: pointer;
 }
 
 .budget-range {
